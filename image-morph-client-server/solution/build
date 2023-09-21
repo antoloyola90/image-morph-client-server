@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source venv/bin/activate
+python -m grpc_tools.protoc -I ./proto  --python_out=./generated --grpc_python_out=./generated ./proto/*.proto
+sed -i '' 's/import\ image\_pb2 as\ image\_\_pb2/from\ generated\ import\ image\_pb2\ as\ image\_\_pb2/g' generated/image_pb2_grpc.py
