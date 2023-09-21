@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source venv/bin/activate
+pythonServerFile='/main.py'
+dirPath="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+dirPath=$dirPath$pythonServerFile
+
+python "$dirPath" "$@"
